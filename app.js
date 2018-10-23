@@ -8,9 +8,7 @@
     var app = {
       'routes': {
         'blog': preventScroll,
-        'projects': preventScroll,
-        'hobbies': preventScroll,
-        'contact': preventScroll,
+        'about': preventScroll,
         'home': preventScroll,
       },
       'default': 'home',
