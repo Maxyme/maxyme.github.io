@@ -1,85 +1,97 @@
-nav ul {
-    margin: 1rem 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
+@import url(https://fonts.googleapis.com/css?family=Allerta+Stencil);
+
+@media(max-width: 499px) {
+  .container {
+    grid-template-columns: auto;
+  }
 }
 
-nav a {
-    margin: 0 1rem;
-    color: #566b78;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: flex;
-    align-items: flex-start;
+@media(min-width: 500px) {
+  .container {
+    grid-template-columns: 1.5fr 320px 20fr;
+  }
 }
 
-.app>* {
-    display: none;
-}
-
-.app>*:last-child {
-    display: block;
-}
-
-.app>*:target {
-    display: block;
-    animation: fade 300ms linear 1;
-}
-
-.app>*:target~* {
-    display: none;
+p {
+  font-family: 'Alerta', stencil;
 }
 
 body {
-    background-color: #ddd;
-    color: #566b78;
-    font-family: 'Allerta Stencil', monospace;
-    font-size: 18px;
-    line-height: 1.5;
+  background-color: #212121;
+  font-family: 'Allerta Stencil', monospace;
+  color: #c9dbe6d7;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-h1, h2, strong {
-    color: #444;
-    text-align: center;
+
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  /* grid-template-columns: 1.5fr 5fr 20fr; */
+  grid-template-areas:
+    "nav header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-gap: 2em;
 }
 
-a {
-    color: #000;
+
+nav {
+  grid-area: nav;
+  padding: 12%;
+}
+
+main {
+  grid-area: main;
+}
+
+aside{
+  grid-area: aside;
 }
 
 header {
-    background-color: gray;
-    line-height: 1.2;
-    padding: 1vw 1em;
-    text-align: center;
-    background-image: linear-gradient(135deg, #7c7c7c, #000);
-    color: #fff;
+  grid-area: header;
 }
 
-header h1 {
-    color: #fff;
-    font-size: 2.5em;
-    font-family: 'Pacifico', monospace; 
+footer {
+  grid-area: footer;
+  padding: 1em;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-header a {
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 4px;
-    font-size: 0.8em;
-    letter-spacing: 0.2em;
-    padding: 1em 2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: none 200ms;
-    transition-property: color, background, border;
+ul {
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 50em;
-    padding: 4em 2em;
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: inherit;
+}
+
+img {
+  max-width:100%;
+  box-sizing: border-box;
+}
+
+.extra_content>* {
+  position: relative;
+  vertical-align: top;
+  text-align: left;
+}
+
+.expando {
+  display: none;
+}
+
+.expando:target {
+  display: block;
 }
