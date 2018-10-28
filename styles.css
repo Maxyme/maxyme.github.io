@@ -79,10 +79,8 @@ img {
 
 .expando {
   display: none;
-  height: 0;
 }
 
 .expando:target {
   display: inherit;
-  height: initial;
 }
